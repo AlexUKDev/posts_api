@@ -1,13 +1,12 @@
-const express = require("express");
-const { router } = require("./router/index");
+const express = require('express');
+const { router } = require('./router/index');
 const app = express();
 
 app.use(express.json());
 
-app.use("/", router);
+app.use('/', router);
 
 app.use((err, req, res, next) => {
-  console.log(err);
   res.status(500).json({ message: err.message });
 });
 
